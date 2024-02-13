@@ -1,6 +1,6 @@
 FROM debian:buster
 
-COPY ../../.env /app/.env
+COPY ../../.env ./app/.env
 
 RUN apt update; \
     apt install -y mariadb-server \
