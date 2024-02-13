@@ -1,18 +1,19 @@
 all : 
-	docker compose -f ./srcs/docker-compose.yml up -d --build
+	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d --build
 
 down : 
-	docker compose -f ./srcs/docker-compose.yml down -v
+	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env down -v
 
 re : 
-	docker compose -f ./srcs/docker-compose.yml down -v
-	docker compose -f ./srcs/docker-compose.yml up -d --build
+	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env down -v
+	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d --build
 
 clean :
-	docker stop $$(docker ps -qa);
-	docker rm $$(docker ps -qa);
-	docker rmi -f $$(docker images -qa);
-	docker volume rm $$(docker volume ls -q);
-	docker network rm $$(docker network ls -q);
+	docker stop $$(docker ps -qa)
+	docker system prune --all --force --volumes
+	docker network prune --force
+	docker volume prune --force
+	rm -rf ~/data/wordpress/*
+	rm -rf ~/data/mariadb/*
 
 .PHONY: all down re clean
