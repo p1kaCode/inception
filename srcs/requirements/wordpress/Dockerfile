@@ -12,7 +12,7 @@ COPY ./tools/wp-setup.sh /
 
 RUN chmod +x wp-setup.sh
 
-ENTRYPOINT ["bash", "wp-setup.sh"]
+ENTRYPOINT ["./wp-setup.sh"]
 
 WORKDIR /var/www/html/
 
