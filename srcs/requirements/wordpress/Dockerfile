@@ -8,11 +8,11 @@ COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
 
 RUN mkdir /run/php
 
-COPY ./tools/wp-setup.sh /usr/local/bin/
+COPY ./tools/wp-setup.sh /
 
-RUN chmod +x /usr/local/bin/wp-setup.sh
+RUN chmod +x wp-setup.sh
 
-ENTRYPOINT ["bash", "./usr/local/bin/wp-setup.sh"]
+ENTRYPOINT ["bash", "wp-setup.sh"]
 
 WORKDIR /var/www/html/
 
