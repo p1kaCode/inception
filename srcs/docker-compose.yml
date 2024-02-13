@@ -41,14 +41,14 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/lmorel/data/mysql
       o: bind
+      device: /home/lmorel/data/mysql
   wp_data:
     driver: local
     driver_opts:
       type: none
-      device: /home/lmorel/data/wordpress
       o: bind
+      device: /home/lmorel/data/wordpress
 
 networks:
   inception:
