@@ -19,7 +19,7 @@ COPY ./conf/wordpress.sql /usr/local/bin/
 RUN chmod +x /usr/local/bin/mariadb.sh
 RUN chmod +x /usr/local/bin/wordpress.sql
 
-ENTRYPOINT ["./usr/local/bin/mariadb.sh"]
+ENTRYPOINT ["bash", "./usr/local/bin/mariadb.sh"]
 
 VOLUME /var/lib/mysql
 
