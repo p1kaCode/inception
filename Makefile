@@ -2,9 +2,10 @@ all :
 	docker compose -f ./srcs/docker-compose.yml up -d --build
 
 down : 
-	docker compose -f ./srcs/docker-compose.yml down
+	docker compose -f ./srcs/docker-compose.yml down -v
 
 re : 
+	docker compose -f ./srcs/docker-compose.yml down -v
 	docker compose -f ./srcs/docker-compose.yml up -d --build
 
 clean :
@@ -13,6 +14,5 @@ clean :
 	docker rmi -f $$(docker images -qa);
 	docker volume rm $$(docker volume ls -q);
 	docker network rm $$(docker network ls -q);
-
 
 .PHONY: all down re clean
