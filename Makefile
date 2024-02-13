@@ -1,7 +1,6 @@
 all :
-	mkdir ~/home/lmorel/data
-	mkdir ~/home/lmorel/data/wordpress
-	mkdir ~/home/lmorel/data/mysql
+	mkdir -p ~/home/lmorel/data/wordpress
+	mkdir -p ~/home/lmorel/data/mysql
 	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d --build
 
 down : 
