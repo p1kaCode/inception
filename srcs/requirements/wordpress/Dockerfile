@@ -2,10 +2,10 @@ FROM debian:buster
 
 COPY ../../.env /app/.env
 
-RUN apt update;
-	apt install -y wget bash curl;
-	apt -y install php-cli php-mysql php-curl php-gd php-intl;
-	apt install -y php-fpm;
+RUN apt-get-get update;
+	apt-get install -y wget bash curl;
+	apt-get -y install php-cli php-mysql php-curl php-gd php-intl;
+	apt-get install -y php-fpm;
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
 
