@@ -1,6 +1,6 @@
 FROM debian:buster
 
-COPY ../../.env /app/.env
+#COPY ../../.env /app/.env
 
 RUN apt-get-get update && apt-get install -y wget bash curl php-cli php-mysql php-curl php-gd php-intl php-fpm;
 
