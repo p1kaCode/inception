@@ -14,7 +14,7 @@ RUN chmod +x wp-setup.sh
 
 ENTRYPOINT ["./wp-setup.sh"]
 
-WORKDIR /var/www/html/
+#WORKDIR /var/www/html/
 
 EXPOSE 9000
 
