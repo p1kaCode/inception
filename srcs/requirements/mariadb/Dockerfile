@@ -10,4 +10,4 @@ COPY ./tools /var/www/
 
 RUN service mysql start && mysql < /var/www/wordpress.sql
 
-CMD ["mysqld"]
+CMD ["mysqld", "--bind-adress=0.0.0.0"]
