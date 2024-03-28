@@ -39,15 +39,18 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/lmorel/data/mariadb
+      device: /home/user/data/mariadb
       o: bind
+    name: mariadb
   wordpress:
     driver: local
     driver_opts:
       type: none
-      device: /home/lmorel/data/wordpress
+      device: /home/user/data/wordpress
       o: bind
+    name: wordpress
 
 networks:
   inception:
     driver: bridge
+    name : inception

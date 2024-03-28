@@ -8,6 +8,6 @@ EXPOSE 3306
 COPY ./conf/50-server.conf /etc/mysql/mariadb.conf.d/
 COPY ./tools /var/www/
 
-RUN service mysql start && mysql < /var/www/wordpress.sql
+RUN service mariadb start && mariadb < /var/www/wordpress.sql
 
-CMD ["mysqld", "--bind-adress=0.0.0.0"]
+CMD ["mysqld", "--bind-address=0.0.0.0"]
