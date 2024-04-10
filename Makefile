@@ -13,6 +13,5 @@ clean :
 	docker system prune --all --force --volumes
 	docker network prune --force
 	docker volume prune --force
-	rm -rf /home/user/data
 
 .PHONY: all down re clean
