@@ -1,6 +1,6 @@
 all :
-	mkdir -p /home/user/data/wordpress
-	mkdir -p /home/user/data/mariadb
+	mkdir -p /home/lmorel/data/wordpress
+	mkdir -p /home/lmorel/data/mariadb
 	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d --build
 
 down : 
