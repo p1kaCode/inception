@@ -1,8 +1,11 @@
 #!/bin/sh
+
 sleep 5
+
 wp core download --path=/var/www/html/wordpress --allow-root
 
 cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
+
 sed -i "s/database_name_here/${MYSQL_DATABASE}/" var/www/html/wordpress/wp-config.php
 sed -i "s/username_here/${MYSQL_USER}/" var/www/html/wordpress/wp-config.php
 sed -i "s/password_here/${MYSQL_PASSWORD}/" var/www/html/wordpress/wp-config.php

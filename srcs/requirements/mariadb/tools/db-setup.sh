@@ -1,11 +1,11 @@
 #!/bin/sh
 
 until mysqladmin ping &>/dev/null; do
-  echo "Attente du démarrage du service MySQL..."
   sleep 1
 done
 
 echo "---------------SETUP START !---------------"
+
 mysql -u root -e "CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;"
 echo "database created = $?"
 
