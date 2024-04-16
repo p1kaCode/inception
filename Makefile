@@ -11,7 +11,9 @@ re : down all
 clean :
 	docker stop $$(docker ps -qa)
 	docker system prune --all --force --volumes
+	docker image prune -a --force
 	docker network prune --force
 	docker volume prune --force
+	sudo rm -rf /home/lmorel/data
 
 .PHONY: all down re clean
