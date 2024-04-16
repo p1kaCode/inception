@@ -4,7 +4,7 @@ all :
 	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env up -d --build
 
 down : 
-	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env down -v
+	docker compose -f ./srcs/docker-compose.yml --env-file srcs/.env down
 
 re : down all
 
